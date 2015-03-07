@@ -1,0 +1,10 @@
+source("helper.R")
+
+febdata <- getFebData()
+png(filename="plot4.png")
+par(mfrow = c(2,2))
+drawPlot2(febdata)
+plot(febdata$DateTime, febdata$Voltage, type="l", ylab="Voltage", xlab="datetime")
+drawPlot3(febdata)
+plot(febdata$DateTime, febdata$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
+dev.off()
